@@ -1,34 +1,35 @@
 /**
- * Photo controller
- */
+ * Album controller
+ * /
+
 
 /**
- * Show all the photos
+ * Show all the albums
  */
 const index = (req, res) => {
     res.send({
         status: 'success',
-        data: 'This is where the photos will be'
+        data: 'This is where the albums will be'
     })
 }
 
 /**
- * Show a specifit photo
+ * Show a specific album
  */
 const show = (req, res) => {
     res.send({
         status: 'success',
-        data: 'This is where a specific photo will be shown'
+        data: 'This is where a specific album will be'
     })
 }
 
 /**
- * Add a new photo
+ * Add an album
  */
 const store = (req, res) => {
     res.send({
         status: 'success',
-        data: 'Add a new photo'
+        data: 'Add an album'
     })
 }
 
