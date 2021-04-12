@@ -2,23 +2,31 @@
  * Photo controller
  */
 
+const { Photo } = require('../models');
+
 /**
  * Show all the photos
  */
-const index = (req, res) => {
+const index = async (req, res) => {
+    const all_photos = await Photo.fetchAll()
     res.send({
         status: 'success',
-        data: 'This is where the photos will be'
+        data: {
+            photos: all_photos
+        }
     })
 }
 
 /**
  * Show a specifit photo
  */
-const show = (req, res) => {
+const show = async (req, res) => {
+    const photo = await new Photo({ id: req.params.photoId }).fetch()
     res.send({
         status: 'success',
-        data: 'This is where a specific photo will be shown'
+        data: {
+            photo
+        }
     })
 }
 
