@@ -5,8 +5,8 @@
 const express = require('express')
 const router = express.Router()
 
-const { createAlbumRules } = require('../validation/validation')
-const { index, show, store } = require('../controllers/album_controller')
+const { addPhotoToAlbumRules, createAlbumRules } = require('../validation/validation')
+const { addPhotoToAlbum, index, show, store } = require('../controllers/album_controller')
 
 /**
  * GET /
@@ -33,6 +33,12 @@ router.get('/:albumId', show)
  *
  */
 
-router.post('/', createAlbumRules, store)
+/**
+ * POST /:albumId/photos
+ * 
+ * Adds a photo to an album
+ */
+
+router.post('/:albumId/photos', addPhotoToAlbumRules, addPhotoToAlbum)
 
 module.exports = router
