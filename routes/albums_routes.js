@@ -33,6 +33,8 @@ router.get('/:albumId', show)
  *
  */
 
+router.post('/', createAlbumRules, store)
+
 /**
  * POST /:albumId/photos
  * 
